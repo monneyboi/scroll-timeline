@@ -842,3 +842,4 @@ export function parseCSSNumericValue(cssText) {
   // Reify a numeric value result, and return the result.
   return reifyNumericValue(result);
 }
+

@@ -110,6 +110,10 @@ function resolvePx(cssValue, info) {
   if (cssNumericValue instanceof CSSUnitValue) {
     if (cssNumericValue.unit === 'px') {
       return cssNumericValue.value;
+    } else if (cssNumericValue.unit === 'vh') {
+      return cssNumericValue.value * (window.innerHeight / 100);
+    } else if (cssNumericValue.unit === 'vw') {
+      return cssNumericValue.value * (window.innerWidth / 100);
     } else {
       throw TypeError("Unhandled unit type " + cssNumericValue.unit);
     }
